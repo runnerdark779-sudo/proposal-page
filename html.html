@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Gway Ou Lay?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #d63384;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #6f42c1;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my girlfriend? 💖</h1>
+  <div class="buttons">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const message = document.getElementById('message');
+
+    yesBtn.addEventListener('click', () => {
+      message.innerHTML = "Yay! I knew it! 💕😊<br>Love you!";
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * 300) - 150;
+      const y = Math.floor(Math.random() * 300) - 150;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    noBtn.addEventListener('click', () => {
+      alert("Are you sure? 😢");
+    });
+  </script>
+
+</body>
+</html>
